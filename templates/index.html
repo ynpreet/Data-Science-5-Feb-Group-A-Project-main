@@ -1,0 +1,192 @@
+<html>
+<head>
+<title>Predict Foreign Exchange Rates</title>
+
+</head>
+<style>
+body{
+   margin: 0 0 100px;
+   padding: 25px;
+   background-image:url('https://media.giphy.com/media/JtBZm3Getg3dqxK0zP/giphy.gif');
+            }
+h1{
+background: #0d8bbd;
+text-align:center;
+font-size: 38px;
+padding: 20px len;
+font-weight:bold;
+margin-left:35%;
+margin-right:35%;
+cursor:pointer;
+font-family: Times New Roman;
+
+}
+marquee{
+background: #00FFFF;
+font-size: 20px;
+padding-top: 6px;
+margin:-23px;
+font-weight:bold;
+margin-left:35%;
+margin-right:35%;
+cursor:pointer;
+font-family: Times New Roman;
+}
+
+label{
+color:#d3eeee;
+background:#1e32af;
+font-size:20px;
+margin: 5px;
+padding:1px;
+display:inline-block;
+}
+footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #00FFFF;
+   color: blue;
+   text-align: center;
+   font-weight:bold;
+   
+}
+#resultout
+{
+   background-color: rgb(71, 212, 107);
+   width: 300px;
+   padding: 11px;
+   
+}
+button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #da2542;
+}
+a
+{
+   color: azure;
+}
+
+
+
+</style>
+<body>
+
+<h1 align="center">Foreign Exchange Rates</h1>
+
+<marquee>Predict Foregin Exchange Rates</marquee>
+<br><br><br><br>
+<div>
+<form action='/predict' method="post">
+   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<label>Country1:</label><select class="form-control" name="Country1">
+    <option value="India">India</option>
+    <option value="Switzerland">Switzerland</option>
+    <option value="Japan">Japan</option>
+    <option value="Canada">Canada
+    <option value="UK">UK</option>
+    <option value="China">China</option>
+  
+      </select>            
+      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+<label>Country2:</label><select class="form-control" name="Country2">
+    <option value="India">India</option>
+    <option value="Switzerland">Switzerland</option>
+    <option value="Japan">Japan</option>
+    <option value="Canada">Canada
+    <option value="UK">UK</option>
+    <option value="China">China</option>
+                        </select> 
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<label>Year:</label>&nbsp&nbsp&nbsp&nbsp
+               <select class="form-control" name="YEAR">
+                     <option value="1982">1982</option>
+                     <option value="1983">1983</option>
+                     <option value="1984">1984</option>
+                     <option value="1985">1985</option>
+                     <option value="1986">1986</option>
+                     <option value="1987">1987</option>
+                     <option value="1988">1988</option>
+                     <option value="1989">1989</option>
+                     <option value="1990">1990</option>
+                     <option value="1991">1991</option>
+                     <option value="1992">1992</option>
+                     <option value="1993">1993</option>
+                     <option value="1994">1994</option>
+                     <option value="1995">1995</option>
+                     <option value="1996">1996</option>
+                     <option value="1997">1997</option>
+                     <option value="1998">1998</option>
+                     <option value="1999">1999</option>
+                     <option value="2000">2000</option>
+                     <option value="2001">2001</option>
+                     <option value="2002">2002</option>
+                     <option value="2003">2003</option>
+                     <option value="2004">2004</option>
+                     <option value="2005">2005</option>
+                     <option value="2006">2006</option>
+                     <option value="2007">2007</option>
+                     <option value="2008">2008</option>
+                     <option value="2009">2009</option>
+                     <option value="2010">2010</option>
+                     <option value="2011">2011</option>
+                     <option value="2012">2012</option>
+                     <option value="2013">2013</option>
+                     <option value="2014">2014</option>
+                     <option value="2015">2015</option>
+                     <option value="2016">2016</option>
+                     <option value="2017">2017</option>
+                     <option value="2018">2018</option>
+                     <option value="2019">2019</option>
+                    
+                                                  </select> 
+                     
+
+<label>Amount:</label>&nbsp&nbsp<input type="text" id="toAmt" name = "amount"size="10" required/></td>
+
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+<center><button type="submit">Predict</button></center>
+</form>
+</div>
+<center ><div id=resultout>
+<br>
+{{pred}}
+<br>
+</div></center>
+<br><br>
+<center>
+<div>
+   <button ><a href="https://public.tableau.com/profile/preet.shailesh.mehta#!/vizhome/EffectofForeignexchangeonGDPacrossYearsfor6Counties/Dashboard2" target="_blank">Relation between FER and GDP of different countries</a></button>
+</div>
+</center>
+
+<br><br>
+<center>
+<div>
+   <button ><a href="https://public.tableau.com/profile/muskan3351#!/vizhome/importandexport_16165735223620/Dashboard2?publish=yes" target="_blank">Relation between FER,export,imports of different countries</a></button>
+</div>
+</center>
+</body>
+<footer>
+<p style="font-size: 17px;font-weight: bold;margin-top: 10px;">Made by Data-Science-5-Feb-Group-A </p>
+<li>
+<a href="https://github.com/Technocolabs100/Data-Science-5-Feb-Group-A-Project" target="_blank" ><span style="font-size: 20px;" class="fa fa-github"></span>&nbsp;Project Github</a>
+</li>
+</footer>
+
+</html>
+
